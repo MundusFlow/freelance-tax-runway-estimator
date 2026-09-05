@@ -85,6 +85,36 @@ button:hover {
   min-height: 24px;
 }
 
+.faq {
+  margin-bottom: 24px;
+}
+
+.faq h2 {
+  color: #1F3864;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.faq-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #1F3864;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #595959;
+  font-size: 14px;
+}
+
 .cta {
   background-color: #1F3864;
   color: #FFFFFF;

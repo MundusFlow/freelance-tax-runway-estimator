@@ -3,6 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Freelance Tax & Runway Estimator</title>
+
+  <!-- Open Graph tags: control how this page looks when shared as a link
+       (Slack, iMessage, Facebook, LinkedIn, etc. all read these) -->
+  <meta property="og:title" content="Freelance Tax & Runway Estimator">
+  <meta property="og:description" content="Two quick, free calculators for freelancers: estimate your quarterly tax set-aside and financial runway.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adilson022.github.io/freelance-tax-runway-estimator/">
+  <!-- TODO: add an og:image once you have a nice screenshot/logo hosted somewhere -->
+
+  <!-- Twitter/X reads its own tags instead of falling back to Open Graph -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Freelance Tax & Runway Estimator">
+  <meta name="twitter:description" content="Two quick, free calculators for freelancers: estimate your quarterly tax set-aside and financial runway.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,6 +56,25 @@
       <button id="runwayBtn">Calculate Runway</button>
 
       <p id="runwayResult" class="result"></p>
+    </div>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Is this tax advice?</h3>
+        <p>No. These calculators use a common rule of thumb (25-30% of net profit) for planning purposes only. Always confirm your actual tax obligations with a licensed tax professional.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does the Master Freelance Ledger work in Google Sheets?</h3>
+        <p>Yes. It's a standard .xlsx file that opens and works fully in Excel, Google Sheets, and most other spreadsheet apps.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my data safe?</h3>
+        <p>Yes — these calculators run entirely in your browser. Nothing you type here is sent anywhere or stored.</p>
+      </div>
     </div>
 
     <div class="cta">
