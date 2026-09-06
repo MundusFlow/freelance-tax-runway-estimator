@@ -5,7 +5,7 @@ A free, no-signup web tool for freelancers to get instant estimates on two commo
 - **Tax Set-Aside** — how much to set aside for taxes this quarter, based on income and business expenses
 - **Runway** — how many months current savings would cover personal expenses with no income
 
-🔗 **Live site:** https://adilson022.github.io/freelance-tax-runway-estimator/
+🔗 **Live site:** https://mundusflow.github.io/freelance-tax-runway-estimator/
 
 ## How it works
 
