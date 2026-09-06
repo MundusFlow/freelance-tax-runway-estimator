@@ -11,6 +11,10 @@ calculateBtn.addEventListener("click", () => {
   const setAside = Math.max(netProfit, 0) * SET_ASIDE_RATE;
 
   resultEl.textContent = `Set aside about $${setAside.toFixed(2)} for taxes this quarter.`;
+
+  if (typeof gtag === "function") {
+    gtag("event", "calculate_tax_click");
+  }
 });
 
 const runwayBtn = document.getElementById("runwayBtn");
@@ -28,4 +32,8 @@ runwayBtn.addEventListener("click", () => {
   const months = savings / monthlyExpenses;
 
   runwayResultEl.textContent = `Your runway is about ${months.toFixed(1)} months.`;
+
+  if (typeof gtag === "function") {
+    gtag("event", "calculate_runway_click");
+  }
 });
