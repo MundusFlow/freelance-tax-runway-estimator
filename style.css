@@ -79,10 +79,22 @@ button:hover {
 
 .result {
   margin-top: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #1F3864;
   min-height: 24px;
+}
+
+.result-line {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.result-warning {
+  color: #B00020;
+}
+
+.result-highlight {
+  color: #1F3864;
+  font-size: 20px;
 }
 
 .faq {

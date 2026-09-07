@@ -25,7 +25,7 @@ No build step needed — just open `index.html` directly in a browser.
 
 ## Related product
 
-This tool links to the **Master Freelance Ledger**, a paid Excel/Google Sheets workbook that tracks income, expenses, quarterly taxes, and runway automatically from real transaction data throughout the year.
+This tool links to **The Freelance CFO**, a paid Excel/Google Sheets workbook that tracks income, expenses, quarterly taxes, and runway automatically from real transaction data throughout the year.
 
 ## Disclaimer
 
