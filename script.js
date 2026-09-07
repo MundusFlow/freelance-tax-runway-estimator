@@ -118,3 +118,32 @@ runwayBtn.addEventListener("click", () => {
     gtag("event", "calculate_runway_click");
   }
 });
+
+// Sticky bottom CTA bar: stays hidden until the visitor scrolls past the
+// hero or runs either calculator, so the first screen isn't a sales pitch.
+const stickyBar = document.getElementById("stickyBar");
+
+if (stickyBar) {
+  let stickyBarShown = false;
+
+  const showStickyBar = () => {
+    if (stickyBarShown) return;
+    stickyBarShown = true;
+    stickyBar.classList.add("visible");
+    if (typeof gtag === "function") {
+      gtag("event", "sticky_cta_shown");
+    }
+  };
+
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > hero.offsetHeight) {
+        showStickyBar();
+      }
+    });
+  }
+
+  calculateBtn.addEventListener("click", showStickyBar);
+  runwayBtn.addEventListener("click", showStickyBar);
+}
