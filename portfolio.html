@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Freelance Tax & Runway Estimator — Portfolio Demo">
   <meta name="twitter:description" content="A frontend project: two live calculators for freelancers, built with vanilla HTML/CSS/JS.">
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -37,11 +37,17 @@
       <h2>Tax Set-Aside</h2>
       <p>Get an instant estimate of what to set aside for taxes.</p>
 
-      <label for="income">Income this quarter ($)</label>
-      <input type="number" id="income">
+      <label for="income">Income this quarter</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="income">
+      </div>
 
-      <label for="expenses">Business expenses this quarter ($)</label>
-      <input type="number" id="expenses">
+      <label for="expenses">Business expenses this quarter</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="expenses">
+      </div>
 
       <button id="calculateBtn">Calculate</button>
 
@@ -52,11 +58,17 @@
       <h2>Runway Calculator</h2>
       <p>See how many months your savings would cover you with no income.</p>
 
-      <label for="savings">Current savings ($)</label>
-      <input type="number" id="savings">
+      <label for="savings">Current savings</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="savings">
+      </div>
 
-      <label for="monthlyExpenses">Average monthly personal expenses ($)</label>
-      <input type="number" id="monthlyExpenses">
+      <label for="monthlyExpenses">Average monthly personal expenses</label>
+      <div class="input-group">
+        <span class="input-prefix">$</span>
+        <input type="number" id="monthlyExpenses">
+      </div>
 
       <button id="runwayBtn">Calculate Runway</button>
 
@@ -79,6 +91,6 @@
 
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
