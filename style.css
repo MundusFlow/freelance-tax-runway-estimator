@@ -15,19 +15,25 @@ body {
   padding: 40px 20px;
 }
 
-header {
+.hero {
+  background-color: #1F3864;
   text-align: center;
-  margin-bottom: 30px;
+  padding: 50px 20px;
+}
+
+.hero-inner {
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 h1 {
-  color: #1F3864;
+  color: #FFFFFF;
   font-size: 28px;
-  margin-bottom: 8px;
+  margin: 0 0 12px 0;
 }
 
 .subtitle {
-  color: #595959;
+  color: #D9E1F2;
   margin: 0;
 }
 
