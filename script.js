@@ -7,12 +7,35 @@ const formatMoney = (value) =>
     maximumFractionDigits: 0,
   }).format(value);
 
+// Disables `button` until every input in `inputs` has a value, and lets
+// pressing Enter in any of those inputs trigger the button (same as a click).
+function wireUpForm(inputs, button) {
+  const updateDisabledState = () => {
+    button.disabled = !inputs.every((input) => input.value.trim() !== "");
+  };
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", updateDisabledState);
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        button.click();
+      }
+    });
+  });
+
+  updateDisabledState();
+}
+
 const calculateBtn = document.getElementById("calculateBtn");
 const resultEl = document.getElementById("result");
+const incomeInput = document.getElementById("income");
+const expensesInput = document.getElementById("expenses");
+
+wireUpForm([incomeInput, expensesInput], calculateBtn);
 
 calculateBtn.addEventListener("click", () => {
-  const income = parseFloat(document.getElementById("income").value) || 0;
-  const expenses = parseFloat(document.getElementById("expenses").value) || 0;
+  const income = parseFloat(incomeInput.value) || 0;
+  const expenses = parseFloat(expensesInput.value) || 0;
 
   const netProfit = income - expenses;
   const taxReserve = Math.max(netProfit, 0) * SET_ASIDE_RATE;
@@ -39,10 +62,14 @@ calculateBtn.addEventListener("click", () => {
 
 const runwayBtn = document.getElementById("runwayBtn");
 const runwayResultEl = document.getElementById("runwayResult");
+const savingsInput = document.getElementById("savings");
+const monthlyExpensesInput = document.getElementById("monthlyExpenses");
+
+wireUpForm([savingsInput, monthlyExpensesInput], runwayBtn);
 
 runwayBtn.addEventListener("click", () => {
-  const savings = parseFloat(document.getElementById("savings").value) || 0;
-  const monthlyExpenses = parseFloat(document.getElementById("monthlyExpenses").value) || 0;
+  const savings = parseFloat(savingsInput.value) || 0;
+  const monthlyExpenses = parseFloat(monthlyExpensesInput.value) || 0;
 
   if (monthlyExpenses <= 0) {
     runwayResultEl.innerHTML = `<div class="result-box"><p class="result-intro">Enter your average monthly expenses to see your runway.</p></div>`;
