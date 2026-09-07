@@ -51,13 +51,19 @@ runwayBtn.addEventListener("click", () => {
 
   const months = savings / monthlyExpenses;
 
-  const runOutDate = new Date();
-  runOutDate.setMonth(runOutDate.getMonth() + Math.floor(months));
-  const runOutLabel = runOutDate.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  let wholeMonths = Math.floor(months);
+  let days = Math.round((months - wholeMonths) * 30);
+  if (days === 30) {
+    wholeMonths += 1;
+    days = 0;
+  }
+  const monthLabel = `${wholeMonths} month${wholeMonths === 1 ? "" : "s"}`;
+  const dayLabel = `${days} day${days === 1 ? "" : "s"}`;
+  const breakdown = days > 0 ? `${monthLabel} and ${dayLabel}` : monthLabel;
 
   runwayResultEl.innerHTML = `
     <div class="result-box">
-      <p class="result-intro">Zero new clients starting today, and you're out of money by ${runOutLabel}.</p>
+      <p class="result-intro">If your income stopped today, your savings could cover approximately ${breakdown} of personal expenses.</p>
       <div class="result-stat">
         <span class="result-label">Runway:</span>
         <span class="result-value result-highlight">${months.toFixed(1)} months</span>
