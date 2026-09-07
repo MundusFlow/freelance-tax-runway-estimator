@@ -88,9 +88,41 @@ button:hover {
   min-height: 24px;
 }
 
-.result-line {
-  margin: 4px 0;
-  font-size: 16px;
+.result-box {
+  background-color: #F7F9FC;
+  border: 1px solid #D9E1F2;
+  border-left: 4px solid #1F3864;
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.result-intro {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #595959;
+  font-style: italic;
+}
+
+.result-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-top: 1px solid #E5E5E5;
+}
+
+.result-stat:first-of-type {
+  border-top: none;
+}
+
+.result-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1A1A1A;
+}
+
+.result-value {
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -100,7 +132,7 @@ button:hover {
 
 .result-highlight {
   color: #1F3864;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .faq {

@@ -1,5 +1,12 @@
 const SET_ASIDE_RATE = 0.28;
 
+const formatMoney = (value) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(value);
+
 const calculateBtn = document.getElementById("calculateBtn");
 const resultEl = document.getElementById("result");
 
@@ -12,8 +19,17 @@ calculateBtn.addEventListener("click", () => {
   const spendable = Math.max(netProfit, 0) - taxReserve;
 
   resultEl.innerHTML = `
-    <p class="result-line result-warning">Treat $${taxReserve.toFixed(2)} as already spent — that's your estimated tax reserve.</p>
-    <p class="result-line result-highlight">Spendable money: $${spendable.toFixed(2)}</p>
+    <div class="result-box">
+      <p class="result-intro">You should probably treat ${formatMoney(taxReserve)} as already spent.</p>
+      <div class="result-stat">
+        <span class="result-label">Estimated tax reserve:</span>
+        <span class="result-value result-warning">${formatMoney(taxReserve)}</span>
+      </div>
+      <div class="result-stat">
+        <span class="result-label">Spendable money:</span>
+        <span class="result-value result-highlight">${formatMoney(spendable)}</span>
+      </div>
+    </div>
   `;
 
   if (typeof gtag === "function") {
@@ -29,7 +45,7 @@ runwayBtn.addEventListener("click", () => {
   const monthlyExpenses = parseFloat(document.getElementById("monthlyExpenses").value) || 0;
 
   if (monthlyExpenses <= 0) {
-    runwayResultEl.innerHTML = `<p class="result-line">Enter your average monthly expenses to see your runway.</p>`;
+    runwayResultEl.innerHTML = `<div class="result-box"><p class="result-intro">Enter your average monthly expenses to see your runway.</p></div>`;
     return;
   }
 
@@ -40,8 +56,13 @@ runwayBtn.addEventListener("click", () => {
   const runOutLabel = runOutDate.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
   runwayResultEl.innerHTML = `
-    <p class="result-line result-warning">Zero new clients starting today, and you're out of money by ${runOutLabel}.</p>
-    <p class="result-line result-highlight">That's about ${months.toFixed(1)} months of runway.</p>
+    <div class="result-box">
+      <p class="result-intro">Zero new clients starting today, and you're out of money by ${runOutLabel}.</p>
+      <div class="result-stat">
+        <span class="result-label">Runway:</span>
+        <span class="result-value result-highlight">${months.toFixed(1)} months</span>
+      </div>
+    </div>
   `;
 
   if (typeof gtag === "function") {
