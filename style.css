@@ -58,6 +58,12 @@ label {
   margin-bottom: 4px;
 }
 
+.field-hint {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  color: #7F7F7F;
+}
+
 input[type="number"] {
   width: 100%;
   padding: 10px;
