@@ -147,3 +147,39 @@ if (stickyBar) {
   calculateBtn.addEventListener("click", showStickyBar);
   runwayBtn.addEventListener("click", showStickyBar);
 }
+
+// Lightbox: click a product screenshot to view it full-size.
+const lightbox = document.getElementById("lightbox");
+
+if (lightbox) {
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxClose = document.getElementById("lightboxClose");
+
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add("open");
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("open");
+  };
+
+  document.querySelectorAll(".product-screenshot").forEach((img) => {
+    img.addEventListener("click", () => openLightbox(img));
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+}
