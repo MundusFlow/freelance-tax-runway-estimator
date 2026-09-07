@@ -43,15 +43,25 @@ calculateBtn.addEventListener("click", () => {
 
   resultEl.innerHTML = `
     <div class="result-box">
-      <p class="result-intro">You should probably treat ${formatMoney(taxReserve)} as already spent.</p>
-      <div class="result-stat">
-        <span class="result-label">Estimated tax reserve:</span>
-        <span class="result-value result-warning">${formatMoney(taxReserve)}</span>
+      <p class="result-headline-label">Your Estimated Tax Reserve</p>
+      <p class="result-headline-value result-warning">${formatMoney(taxReserve)}</p>
+
+      <div class="result-breakdown">
+        <p class="breakdown-title">Based on:</p>
+        <div class="breakdown-row"><span>${formatMoney(income)} income</span></div>
+        <div class="breakdown-row"><span>&minus; ${formatMoney(expenses)} expenses</span></div>
+        <div class="breakdown-row breakdown-total"><span>= ${formatMoney(netProfit)} estimated net profit</span></div>
+        <div class="breakdown-row">
+          <span>Suggested tax reserve (${(SET_ASIDE_RATE * 100).toFixed(0)}%):</span>
+          <span>${formatMoney(taxReserve)}</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Spendable money:</span>
+          <span>${formatMoney(spendable)}</span>
+        </div>
       </div>
-      <div class="result-stat">
-        <span class="result-label">Spendable money:</span>
-        <span class="result-value result-highlight">${formatMoney(spendable)}</span>
-      </div>
+
+      <p class="result-tip">&#128161; Treat this money as already spent.</p>
     </div>
   `;
 
@@ -90,11 +100,17 @@ runwayBtn.addEventListener("click", () => {
 
   runwayResultEl.innerHTML = `
     <div class="result-box">
-      <p class="result-intro">If your income stopped today, your savings could cover approximately ${breakdown} of personal expenses.</p>
-      <div class="result-stat">
-        <span class="result-label">Runway:</span>
-        <span class="result-value result-highlight">${months.toFixed(1)} months</span>
+      <p class="result-headline-label">Your Estimated Runway</p>
+      <p class="result-headline-value result-highlight">${months.toFixed(1)} months</p>
+
+      <div class="result-breakdown">
+        <p class="breakdown-title">Based on:</p>
+        <div class="breakdown-row"><span>${formatMoney(savings)} in savings</span></div>
+        <div class="breakdown-row"><span>&divide; ${formatMoney(monthlyExpenses)} avg. monthly expenses</span></div>
+        <div class="breakdown-row breakdown-total"><span>= ${months.toFixed(1)} months of runway</span></div>
       </div>
+
+      <p class="result-tip">&#128161; That's about ${breakdown} before you'd need new income.</p>
     </div>
   `;
 
