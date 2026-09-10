@@ -277,6 +277,50 @@ button:hover {
   font-size: 14px;
 }
 
+.more-tools {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.more-tools-title {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1F3864;
+}
+
+.more-tools-subtitle {
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  color: #7F7F7F;
+}
+
+.more-tools-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.more-tools-links a {
+  display: block;
+  background-color: #FFFFFF;
+  border: 1px solid #D9E1F2;
+  border-left: 4px solid #1F3864;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #1F3864;
+  font-weight: bold;
+  font-size: 13.5px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.more-tools-links a:hover {
+  background-color: #F7F9FC;
+}
+
 .cta {
   background-color: #1F3864;
   color: #FFFFFF;
