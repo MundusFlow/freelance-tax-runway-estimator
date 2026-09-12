@@ -247,6 +247,93 @@ button:hover {
   padding: 10px 12px;
 }
 
+.result-interpretation {
+  margin: 0 0 10px 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #1A1A1A;
+}
+
+.result-benchmark {
+  margin: 0 0 14px 0;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  color: #595959;
+  background-color: #F7F9FC;
+  border-radius: 4px;
+}
+
+.result-next-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #1F3864;
+  text-decoration: none;
+}
+
+.result-next-link:hover {
+  text-decoration: underline;
+}
+
+.result-upgrade {
+  margin: 10px 0 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed #E5E5E5;
+  font-size: 13px;
+  color: #595959;
+}
+
+.result-upgrade a {
+  color: #1F3864;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.result-upgrade a:hover {
+  text-decoration: underline;
+}
+
+.privacy-note {
+  margin: 0 0 14px 0;
+  font-size: 12px;
+  color: #7F7F7F;
+}
+
+.clear-link {
+  display: inline-block;
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-size: 12.5px;
+  font-weight: bold;
+  color: #1F3864;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clear-link:hover {
+  color: #16294B;
+}
+
+.calc-explainer {
+  margin-top: 8px;
+}
+
+.calc-explainer p {
+  margin: 0 0 10px 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #444444;
+}
+
+.calc-explainer p:last-child {
+  margin-bottom: 0;
+}
+
 .faq {
   margin-bottom: 24px;
 }

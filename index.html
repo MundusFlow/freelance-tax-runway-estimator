@@ -49,47 +49,67 @@
     <div class="card" id="tax-set-aside">
       <h2>Tax Set-Aside</h2>
       <p>Get an instant estimate of what to set aside for taxes.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="tax_clearBtn">Clear and enter your own numbers</button>
 
       <label for="income">Income this quarter</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="income">
+        <input type="number" id="income" value="9500">
       </div>
 
       <label for="expenses">Business expenses this quarter</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="expenses">
+        <input type="number" id="expenses" value="800">
       </div>
 
       <button id="calculateBtn">Calculate</button>
 
       <div id="result" class="result"></div>
+
+      <p class="section-divider">About This Tax Set-Aside Calculator</p>
+      <div class="calc-explainer">
+        <p>Freelance income doesn't have taxes withheld the way a paycheck does, which is why so many freelancers get blindsided at tax time. This calculator gives you a simple, consistent percentage to set aside every time you get paid.</p>
+        <p>The rule of thumb here is intentionally simple rather than precise &mdash; it's meant to be a number you can act on immediately, not a substitute for a real tax projection from an accountant who knows your bracket, state, and deductions.</p>
+        <p>Business expenses reduce the profit this tax is calculated on, which is why tracking them consistently (software, home office, a portion of internet, mileage) matters even for freelancers who hate bookkeeping &mdash; every dollar of legitimate expense is a dollar that isn't taxed.</p>
+        <p>The habit that actually works: move your set-aside percentage to a separate savings account the same day a client payment clears. If you never see the money as spendable, you'll never be tempted to spend it.</p>
+      </div>
     </div>
 
     <div class="card" id="runway-calculator">
       <h2>Runway Calculator</h2>
       <p>See how many months your savings would cover you with no income.</p>
+      <p class="privacy-note">&#128274; Runs entirely in your browser &mdash; nothing you enter is sent or stored.</p>
+      <button type="button" class="clear-link" id="runway_clearBtn">Clear and enter your own numbers</button>
 
       <label for="savings">Total current savings</label>
       <p class="field-hint">The full amount you have saved right now — not a monthly figure.</p>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="savings">
+        <input type="number" id="savings" value="12000">
       </div>
 
       <label for="monthlyExpenses">Average monthly personal expenses</label>
       <div class="input-group">
         <span class="input-prefix">$</span>
-        <input type="number" id="monthlyExpenses">
+        <input type="number" id="monthlyExpenses" value="3100">
       </div>
 
       <button id="runwayBtn">Calculate Runway</button>
 
       <div id="runwayResult" class="result"></div>
+
+      <p class="section-divider">About This Runway Calculator</p>
+      <div class="calc-explainer">
+        <p>Freelance income is inherently lumpy &mdash; a great quarter can be followed by a quiet one. Runway tells you, in plain months, how long your savings would cover you if new client work dried up completely.</p>
+        <p>This calculator uses your personal monthly expenses on purpose, not a hypothetical &ldquo;business&rdquo; budget &mdash; for most freelancers, the business and personal finances are the same pool of money, and that's the number that actually determines how much risk you can afford to take.</p>
+        <p>Runway is also a negotiating tool. A freelancer with six months of runway can afford to walk away from a lowball client or a scope-creeping project; a freelancer with three weeks often can't, and clients can sense the difference.</p>
+        <p>If your runway is shorter than you'd like, the fastest lever isn't always more income &mdash; trimming fixed monthly expenses even slightly extends runway immediately, without waiting on a new contract to land.</p>
+      </div>
     </div>
 
-    <div class="cta">
+    <div class="cta" id="cta">
       <h2>You've got your number. Now make sure it stays under control.</h2>
       <p>The Freelance CFO turns these one-time calculations into a year-round financial dashboard.</p>
 
